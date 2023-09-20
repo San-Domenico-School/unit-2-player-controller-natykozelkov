@@ -66,11 +66,8 @@
       },
       "url": "https://packages.unity.com"
     },
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
-=======
->>>>>>> Stashed changes
     "com.unity.mathematics": {
       "version": "1.2.6",
       "depth": 1,
@@ -78,10 +75,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< Updated upstream
 >>>>>>> upstream/main
-=======
->>>>>>> Stashed changes
     "com.unity.probuilder": {
       "version": "5.1.1",
       "depth": 0,
@@ -93,11 +87,8 @@
       },
       "url": "https://packages.unity.com"
     },
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
-=======
->>>>>>> Stashed changes
     "com.unity.render-pipelines.core": {
       "version": "14.0.8",
       "depth": 1,
@@ -152,10 +143,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< Updated upstream
 >>>>>>> upstream/main
-=======
->>>>>>> Stashed changes
     "com.unity.settings-manager": {
       "version": "2.0.1",
       "depth": 1,
@@ -163,11 +151,8 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
-=======
->>>>>>> Stashed changes
     "com.unity.shadergraph": {
       "version": "14.0.8",
       "depth": 0,
@@ -177,10 +162,7 @@
         "com.unity.searcher": "4.9.2"
       }
     },
-<<<<<<< Updated upstream
 >>>>>>> upstream/main
-=======
->>>>>>> Stashed changes
     "com.unity.terrain-tools": {
       "version": "5.0.3",
       "depth": 0,
