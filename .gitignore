@@ -71,5 +71,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+<<<<<<< Updated upstream
 # Imported Assets Should be Placed in a folder called ImportedLibraries
 /[Aa]ssets/[Ii]mportedLibraries
+=======
+# Location of all Large Import Packages
+/[Aa]ssets/[Ii]mported_Packages
+/[Aa]ssets/[Ii]mported_Packages.meta
+>>>>>>> Stashed changes
