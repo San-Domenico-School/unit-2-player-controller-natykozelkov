@@ -3,54 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/**********************************************
- * Component of the Vehicle, takes in user
- * imput to move and turn the vehicle
+/********************************************
+ * Component of vehicle that moves it at a constant speed forward
  * 
- * Natalie Kozelkova
- * September 12, 2023
- *********************************************/
+ * Bryce Haddock
+ * Spetember 12, 2023 Version 1.0
+ *******************************************/
 
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    private float speed;            // holds the forward of the vehicle
-    private float turnSpeed;        // holds the turn speed of the vehicle
-    private float verticalInput;    // gets a value [-1, 1] from user key press up/down or W/S
-    private float horizontalInput;  // ets a value [-1, 1] from user key press left/right or A/S
+    private float speed;                // holds foward movement of vehicle
+    private float turnSpeed;            // holds the turn speed of the vehicle
+    private float verticalInput;        // gets a value [-1,1] from user key press up/down W/S
+    private float horizantalInput;      // gets a value [-1,1] from user key press left/right A/D
 
-    private Rigidbody rb;           // points to vehicle rigidbody component
+    private Rigidbody rb;               // points to vehicle rigid body component
 
-    // Initializes speed before the first frame update
+
+    // initializes speed and turn speed before first frame update
     void Start()
     {
-        speed = 1200.0f;
-        turnSpeed = 30.0f;
-        rb = GetComponent<Rigidbody>();
-     
+        
+        speed = 3000.0f;                    // Constant speed of vehicle
+        turnSpeed = 30.0f;                  // turn speed of vehicle
+        rb = GetComponent<Rigidbody>();     // short cut to rigidbody
+   
     }
 
-    // Update is called once per frame
+    // Updates vehicle postion per frame on Update
     void FixedUpdate()
     {
-        rb.AddRelativeForce(Vector3.forward * speed * verticalInput);
-        transform.Rotate(Vector3.up * turnSpeed * horizontalInput * Time.deltaTime);
-        Scorekeeper.Instance.AddToScore(verticalInput);
+        rb.AddRelativeForce(Vector3.forward * speed * verticalInput);                   //updates vehicles position upon vertical input "W"
+        transform.Rotate(Vector3.up * turnSpeed * horizantalInput * Time.deltaTime);    //rotates vehicle upon horizantal input A/D
 
+        //Scorekeeper.Instance.AddToScore(verticalInput);                                 //adds to score upon vertical input "W"
     }
-
-    // Called from PlayerActionInput when user presses WASD or arrow keys
+    // Updates movements of vehicle on keypress WASD
     private void OnMove(InputValue input)
     {
-        verticalInput = input.Get<Vector2>().y;
-        horizontalInput = input.Get<Vector2>().x;
+        verticalInput = input.Get<Vector2>().y;         //moves vehicle forward upon vertical input "W"
+        horizantalInput = input.Get<Vector2>().x;       //moves vehicle horizontal upon horizantal input A/D
     }
 
-    private void OnCollisionEnter(Collision collision)
+    //Subtracts from score when vehicle collides with Obstacles 
+    private void OnCollisionEnter(Collision collision)          
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle"))    //if the vehicle collides with Obstacle refrence method
         {
-            Scorekeeper.Instance.SubtractFromScore();
+            //Scorekeeper.Instance.SubtractFromScore();       //subtracts from score if collision with Obstacles occurs
         }
     }
 
 }
+
