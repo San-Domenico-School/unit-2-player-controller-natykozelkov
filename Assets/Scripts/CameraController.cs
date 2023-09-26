@@ -5,7 +5,7 @@ using UnityEngine;
  * Component of the main camera that keeps it 
  * a constant distance from the vehicle
  * 
- * Bryce Haddock
+ * Naty Kozelkova
  * September 12,2023 Version 1.0
  *******************************************/
 

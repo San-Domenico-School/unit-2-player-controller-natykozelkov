@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 /********************************************
  * Component of vehicle that moves it at a constant speed forward
  * 
- * Bryce Haddock
+ * Naty Kozelkova
  * Spetember 12, 2023 Version 1.0
  *******************************************/
 
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         rb.AddRelativeForce(Vector3.forward * speed * verticalInput);                   //updates vehicles position upon vertical input "W"
         transform.Rotate(Vector3.up * turnSpeed * horizantalInput * Time.deltaTime);    //rotates vehicle upon horizantal input A/D
 
-        //Scorekeeper.Instance.AddToScore(verticalInput);                                 //adds to score upon vertical input "W"
+        Scorekeeper.Instance.AddToScore(verticalInput);                                 //adds to score upon vertical input "W"
     }
     // Updates movements of vehicle on keypress WASD
     private void OnMove(InputValue input)
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))    //if the vehicle collides with Obstacle refrence method
         {
-            //Scorekeeper.Instance.SubtractFromScore();       //subtracts from score if collision with Obstacles occurs
+            Scorekeeper.Instance.SubtractFromScore();       //subtracts from score if collision with Obstacles occurs
         }
     }
 
