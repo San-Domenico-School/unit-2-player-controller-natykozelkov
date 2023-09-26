@@ -24,10 +24,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         
-        speed = 3000.0f;                    // Constant speed of vehicle
+        speed = 2000.0f;                    // Constant speed of vehicle
         turnSpeed = 30.0f;                  // turn speed of vehicle
         rb = GetComponent<Rigidbody>();     // short cut to rigidbody
-   
+        originalPosition = transform.position;
+
     }
 
     // Updates vehicle postion per frame on Update
@@ -54,5 +55,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-}
+    public Transform startingPoint; // Drag the starting point GameObject into this field in the Inspector
 
+    private Vector3 originalPosition;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            // Teleport the vehicle back to the starting point
+            transform.position = startingPoint.position;
+        }
+
+    }
+}
